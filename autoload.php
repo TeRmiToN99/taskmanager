@@ -1,10 +1,11 @@
 <?php
 
-function __autoload($className)
+function __autoload($class)
 {
-    $classNameParts = explode('\\', $className);
+    /*$classNameParts = explode('\\', $className);
     unset($classNameParts[0]);
-    $className = implode('/', $classNameParts);
+    $className = implode('/', $classNameParts);*/
+    require  __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
 
-    require  __DIR__ . '/classes/' . $className . '.php';
+    //require  __DIR__ . '/classes/' . $className . '.php';
 }

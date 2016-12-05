@@ -3,5 +3,5 @@
     <p>
         <?php echo $value['text'];?>
     </p>
-    <p>автор: <?= $value['author'];?> </p>
+    <p>Автор: <?= $value['author'];?> </p>
 <?php endforeach;?>
