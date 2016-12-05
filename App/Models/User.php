@@ -16,4 +16,5 @@ class User extends Model
     public $name;
     public $email;
 
+    public function getName(){}
 }
