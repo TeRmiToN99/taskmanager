@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '/autoload.php';
 
-$db = new \App\Db();
-$data = $db->query('SELECT * FROM user');
-var_dump($data);
+$users = \App\Models\User::findAll();
+var_dump($users);
