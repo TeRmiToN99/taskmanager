@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: TeRmiT
- * Date: 05.12.2016
- * Time: 23:01
- */
+
 
 namespace App\Models;
 
