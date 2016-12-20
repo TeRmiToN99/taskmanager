@@ -6,14 +6,16 @@ namespace App;
 
 class Db
 {
-    private $dbh;
+    use \Singleton;
 
-    public function __construct()
+    protected $dbh;
+
+    protected function __construct()
     {
         $this->dbh = new \PDO('mysql:host=localhost;dbname=worktask','root', '');
     }
-    public function execute($sql){
-        $sth = $this->dbh->prepare($sql);
+    public function execute($sql, $params = []){
+        $sth = $this->dbh->prepare($sql, $params);
         $res = $sth->execute();
         return $res;
     }
