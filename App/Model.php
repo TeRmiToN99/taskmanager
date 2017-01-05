@@ -15,7 +15,6 @@ abstract class Model
             static::class//'App\Models\User' //User::class
         );
     }
-    abstract public function getName();
 
     public static function findById(int $id){
         if($id != ' ') {
