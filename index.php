@@ -1,2 +1,12 @@
 <?php
-require __DIR__ . '/App/templates/index.php';
+
+require __DIR__ . '/autoload.php';
+
+$view = new \App\View();
+$view->title='Пользователи | taskmanager';
+$view->users = \App\Models\User::findAll();
+
+
+
+
+$view->display(__DIR__ . '/App/templates/index.php');

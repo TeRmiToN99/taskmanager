@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title><?php echo $title; ?></title>
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -18,19 +18,16 @@
     <![endif]-->
 </head>
 <body>
+<h1>Пользователи</h1>
+<?php foreach ($users as $user) { ?>
+<div class="panel panel-default">
+    <div class="panel-heading"><?php echo $user->name;?></div>
+    <div class="panel-body"><?php echo $user->email;?></div>
+</div>
+<?php } ?>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<h1>Hello, world!</h1>
-
-    <?php foreach($data as $value): ?>
-        <h4> Заголовок: <a href="article.php?id=<?=$value['id']?>"><?php echo $value['title']?></a></h4>
-        <p>
-            <?php echo $value['text'];?>
-        </p>
-        <p>автор: <?= $value['author'];?> </p>
-    <?php endforeach;?>
-
 </body>
 </html>
