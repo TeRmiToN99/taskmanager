@@ -11,8 +11,8 @@ abstract class Model
     public static function findAll(){
         $db = Db::instance();
         return $db->query(
-            'SELECT * FROM ' . static::TABLE,  //self::$table,
-            static::class//'App\Models\User' //User::class
+            'SELECT * FROM ' . static::TABLE,
+            [],static::class
         );
     }
 
@@ -20,9 +20,9 @@ abstract class Model
         if($id != ' ') {
             $db = Db::instance();
             return $db->query(
-                'SELECT * FROM ' . static::TABLE,
-                static::class
-                . 'WHERE id = ' . $id,
+                'SELECT * FROM ' . static::TABLE
+                . ' WHERE id = :id',
+                [':id' => $id],
                 static::class
             );
         }else{
