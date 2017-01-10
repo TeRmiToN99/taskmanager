@@ -2,11 +2,6 @@
 
 require __DIR__ . '/autoload.php';
 
-$view = new \App\View();
-$view->title='Пользователи | taskmanager';
-$view->users = \App\Models\User::findAll();
-
-
-
-
-$view->display(__DIR__ . '/App/templates/index.php');
+$controller = new \App\Controllers\News();
+$action = $_GET['action'] ?: 'Index';
+$controller->action($action);

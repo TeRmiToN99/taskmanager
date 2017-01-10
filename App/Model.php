@@ -24,7 +24,7 @@ abstract class Model
                 . ' WHERE id = :id',
                 [':id' => $id],
                 static::class
-            );
+            )[0];
         }else{
             return false;
         }
