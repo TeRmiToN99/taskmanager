@@ -18,7 +18,13 @@
     <![endif]-->
 </head>
 <body>
-<h1>Одна статья</h1>
+<?php foreach ($errors as $error): ?>
+    <div class="alert alert-danger">
+        <?= $error->getMessage(); ?>
+    </div>
+<?php endforeach;?>
+<h1>Одна новость</h1>
+<?php foreach ($news as $article) { ?>
     <div class="panel panel-default">
         <div class="panel-heading"><?php echo $article->title;?>
             <p> <?php if (!empty($article->author)): ?>
@@ -28,6 +34,7 @@
         <div class="panel-body">
             <?php echo $article->lead; ?></div>
     </div>
+<?php } ?>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

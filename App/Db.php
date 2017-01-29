@@ -12,7 +12,11 @@ class Db
 
    protected function __construct()
     {
-        $this->dbh = new \PDO('mysql:host=localhost;dbname=worktask','root', '');
+        try{
+            $this->dbh = new \PDO('mysql:host=localhost;dbname=worktask','root', '');
+        } catch (\PDOException $e) {
+            throw new \App\Exceptions\Db($e->getMessage());
+        }
     }
     public function execute($sql, $params = []){
         $sth = $this->dbh->prepare($sql, $params);
